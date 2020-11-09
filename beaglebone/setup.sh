@@ -29,6 +29,7 @@ rm "deploy.tar" &&
 rm "deploy.tar.gpg" &&
 
 # clone the nutbox private repo 
+rm -rf nutbox
 sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
 
 # symlink dot files
