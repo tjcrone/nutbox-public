@@ -31,5 +31,10 @@ rm "deploy.tar.gpg" &&
 # clone the nutbox private repo 
 sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
 
+# symlink dot files
+sudo -u debian mv .bashrc .bashrc.bak0
+sudo -u debian ln -s nutbox/beaglebone/.bashrc
+sudo -u debian ln -s nutbox/beaglebone/.gitconfig
+
 # report status
 echo "Setup complete."
