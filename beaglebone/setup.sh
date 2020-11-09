@@ -3,6 +3,8 @@
 # Setup script for the Nutbox Beaglebone. Run:
 # sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup.sh)"
 
+set -e
+
 # locations
 HOME="/home/debian"
 NUTBOX="$HOME/nutbox"
@@ -22,11 +24,19 @@ rm -rf $HOME/bin
 
 # install deploy key
 rm -rf ".ssh"
-curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/beaglebone/deploy.tar.gpg?raw=true" &&
-gpg --no-symkey-cache -d "deploy.tar.gpg" > "deploy.tar" &&
-tar -xvf "deploy.tar" &&
-rm "deploy.tar" &&
-rm "deploy.tar.gpg" &&
+curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/beaglebone/deploy.tar.gpg?raw=true"
+
+decrypt_file () {
+    gpg --no-symkey-cache -d "deploy.tar.gpg" > "deploy.tar"
+}
+
+while ! decrypt_file; do
+    echo "Incorrect password. Try again."
+done
+
+tar -xvf "deploy.tar"
+rm "deploy.tar"
+rm "deploy.tar.gpg"
 
 # clone the nutbox private repo 
 rm -rf nutbox
