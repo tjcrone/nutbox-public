@@ -38,13 +38,22 @@ sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # apt
-#apt-get update
-#apt-get upgrade -y
-#apt-get dist-upgrade -y
-#apt-get install -y linux-headers-$(uname -r)
+apt-get update
+apt-get upgrade -y
+apt-get dist-upgrade -y
+apt-get install -y linux-headers-$(uname -r)
+#apt-get install -y python3-venv
 
 # switch default python version
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
+# virtualenv
+#pip3 install virtualenv
+
 # report status
 echo "Setup complete."
+
+
+# scrarch
+# screen
+# jupyter lab --no-browser --port=5678
