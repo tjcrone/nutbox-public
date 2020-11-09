@@ -21,11 +21,12 @@ rm -f $HOME/.gitconfig
 rm -rf $HOME/bin
 
 # install deploy key
-curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/beaglebone/deploy.tar.gpg?raw=true"
-gpg --no-symkey-cache -d "deploy.tar.gpg" > "deploy.tar"
-tar -xvf "deploy.tar"
-rm "deploy.tar"
-rm "deploy.tar.gpg"
+rm -rf ".ssh"
+curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/beaglebone/deploy.tar.gpg?raw=true" &&
+gpg --no-symkey-cache -d "deploy.tar.gpg" > "deploy.tar" &&
+tar -xvf "deploy.tar" &&
+rm "deploy.tar" &&
+rm "deploy.tar.gpg" &&
 
 # clone the nutbox private repo 
 sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
