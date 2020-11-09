@@ -36,5 +36,15 @@ sudo -u debian mv .bashrc .bashrc.bak0
 sudo -u debian ln -s nutbox/beaglebone/.bashrc
 sudo -u debian ln -s nutbox/beaglebone/.gitconfig
 
+# apt
+
+apt-get update
+apt-get upgrade -y
+apt-get dist-upgrade -y
+apt-get install -y linux-headers-$(uname -r)
+
+# switch default python version
+update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
 # report status
 echo "Setup complete."
