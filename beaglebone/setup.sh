@@ -38,10 +38,10 @@ sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # apt
-apt-get update
-apt-get upgrade -y
-apt-get dist-upgrade -y
-apt-get install -y linux-headers-$(uname -r)
+#apt-get update
+#apt-get upgrade -y
+#apt-get dist-upgrade -y
+#apt-get install -y linux-headers-$(uname -r)
 
 # switch default python version
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
