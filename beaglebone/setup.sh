@@ -33,12 +33,11 @@ rm -rf nutbox
 sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
 
 # symlink dot files
-sudo -u debian mv .bashrc .bashrc.bak0
-sudo -u debian ln -s nutbox/beaglebone/.bashrc
-sudo -u debian ln -s nutbox/beaglebone/.gitconfig
+sudo -u debian mv -f .bashrc .bashrc.bak0
+sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
+sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # apt
-
 apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
