@@ -52,22 +52,19 @@ apt-get update
 apt-get upgrade -y
 apt-get dist-upgrade -y
 apt-get install -y linux-headers-$(uname -r)
-#apt-get install -y python3-venv
 
 # switch default python version
-#update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
-#pip
-#update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
-#pip install --upgrade pip
-
-# virtualenv
-#pip install virtualenv
+#pipenv
+apt-get install -y pipenv
+cd nutbox/beaglebone
+sudo -u debian pipenv install
 
 # report status
 echo "Setup complete."
 
-
 # scrarch
 # screen
 # jupyter lab --no-browser --port=5678
+# apt-get install -y python3-venv
