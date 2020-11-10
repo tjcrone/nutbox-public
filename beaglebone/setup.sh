@@ -46,6 +46,7 @@ sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
 sudo -u debian mv -f .bashrc .bashrc.bak0
 sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
+sudo -u debian source .bashrc
 
 # apt
 apt-get update
