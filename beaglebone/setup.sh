@@ -57,10 +57,11 @@ apt-get install -y linux-headers-$(uname -r)
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
 #pipenv
-export PIPENV_TIMEOUT=9999
 apt-get install -y pipenv
-cd nutbox/beaglebone
-sudo -u debian pipenv install
+#export PIP_NO_CACHE_DIR=off
+#export PIPENV_TIMEOUT=9999
+#cd nutbox/beaglebone
+#sudo -u debian pipenv install
 
 # report status
 echo "Setup complete."
