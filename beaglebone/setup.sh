@@ -55,10 +55,14 @@ apt-get install -y linux-headers-$(uname -r)
 #apt-get install -y python3-venv
 
 # switch default python version
-update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+#update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
+#pip
+#update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+#pip install --upgrade pip
 
 # virtualenv
-#pip3 install virtualenv
+#pip install virtualenv
 
 # report status
 echo "Setup complete."
