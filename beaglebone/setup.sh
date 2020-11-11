@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Setup script for the Nutbox Beaglebone. Run:
-# sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup.sh)"
+# Setup script for the Nutbox Beaglebone.
+# This script works with: bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img
 
 set -e
 
@@ -21,6 +21,11 @@ cd $HOME
 # clean up home directory
 rm -f $HOME/.gitconfig
 rm -rf $HOME/bin
+
+# apt
+apt update
+apt install vim curl
+#apt-get install -y linux-headers-$(uname -r)
 
 # install deploy key
 rm -rf ".ssh"
@@ -47,12 +52,6 @@ sudo -u debian mv -f .bashrc .bashrc.bak0
 sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
-# apt
-#apt-get update
-#apt-get upgrade -y
-#apt-get dist-upgrade -y
-#apt-get install -y linux-headers-$(uname -r)
-
 # switch default python version
 #update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
@@ -76,8 +75,6 @@ sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # report status
 echo "Setup complete."
-
-
 
 # scratch
 # screen
