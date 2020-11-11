@@ -16,6 +16,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # move to user home
+echo "Setting up Beaglebone ..."
 cd $HOME
 
 # clean up home directory
@@ -24,8 +25,15 @@ rm -rf $HOME/bin
 
 # apt
 apt update
-apt install vim curl
+apt install -y vim curl git python3 python3-venv
 #apt-get install -y linux-headers-$(uname -r)
+
+# alternatives
+update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
+# nodejs
+#curl -sL "https://deb.nodesource.com/setup_14.x" | /bin/bash -
+#apt install -y nodejs
 
 # install deploy key
 rm -rf ".ssh"
@@ -52,9 +60,6 @@ sudo -u debian mv -f .bashrc .bashrc.bak0
 sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
-# switch default python version
-#update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-
 # pipenv
 #cd nutbox/beaglebone
 #apt-get install -y pipenv
@@ -65,7 +70,6 @@ sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # venv
 #export PIP_NO_CACHE_DIR="off"
-#apt-get install -y python3-venv
 #cd nutbox/beaglebone
 #python -m venv venv
 #pip install -r requirements.txt
@@ -74,7 +78,7 @@ sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 #sudo -E -u debian jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 # report status
-echo "Setup complete."
+echo "Beaglebone setup complete."
 
 # scratch
 # screen
