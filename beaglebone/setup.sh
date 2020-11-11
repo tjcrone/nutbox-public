@@ -48,25 +48,37 @@ sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # apt
-apt-get update
-apt-get upgrade -y
-apt-get dist-upgrade -y
-apt-get install -y linux-headers-$(uname -r)
+#apt-get update
+#apt-get upgrade -y
+#apt-get dist-upgrade -y
+#apt-get install -y linux-headers-$(uname -r)
 
 # switch default python version
-update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+#update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
-#pipenv
-cd nutbox/beaglebone
-apt-get install -y pipenv
-export PIP_NO_CACHE_DIR="off"
-export PIPENV_TIMEOUT=9999
-sudo -E -u debian pipenv install
+# pipenv
+#cd nutbox/beaglebone
+#apt-get install -y pipenv
+#export PIP_NO_CACHE_DIR="off"
+#export PIPENV_TIMEOUT=9999
+#sudo -E -u debian pipenv install
+#sudo -E -u debian pipenv shell
+
+# venv
+#export PIP_NO_CACHE_DIR="off"
+#apt-get install -y python3-venv
+#cd nutbox/beaglebone
+#python -m venv venv
+#pip install -r requirements.txt
+
+# jupyter labextensions
+#sudo -E -u debian jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 # report status
 echo "Setup complete."
 
-# scrarch
+
+
+# scratch
 # screen
 # jupyter lab --no-browser --port=5678
-# apt-get install -y python3-venv
