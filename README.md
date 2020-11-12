@@ -1,3 +1,7 @@
-# nutbox-public
+# Nutbox Public Files
 
-Public files for the Nutbox project.
+
+## Beaglebone setup
+```
+wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup.sh;sudo /bin/bash setup.sh
+```
