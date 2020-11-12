@@ -9,23 +9,14 @@ set -e
 HOME="/home/debian"
 NUTBOX="$HOME/nutbox"
 
-# check for root
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root."
-   exit 1
-fi
-
 # move to user home
 echo "Setting up Beaglebone ..."
 cd $HOME
 
-# clean up home directory
-rm -f $HOME/.gitconfig
-rm -rf $HOME/bin
+# run root script
+wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup.sh
+sudo /bin/bash setup_root.sh
 
-# apt
-apt update
-apt install -y vim curl git python3 python3-venv linux-headers-$(uname -r)
-
-# alternatives
-update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+# run user script
+wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup_user.sh
+/bin/bash setup_user.sh
