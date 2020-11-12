@@ -23,9 +23,9 @@ cd $HOME
 passwd -u debian
 
 # run root script
-wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup_root.sh
+wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_root.sh
 /bin/bash setup_root.sh
 
 # run user script
-wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup_user.sh
+wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_user.sh
 sudo -u debian /bin/bash setup_user.sh

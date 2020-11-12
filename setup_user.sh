@@ -15,7 +15,7 @@ cd $HOME
 
 # install deploy key
 rm -rf ".ssh"
-curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/beaglebone/deploy.tar.gpg?raw=true"
+curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/deploy.tar.gpg?raw=true"
 
 decrypt_file () {
     gpg --no-symkey-cache -d "deploy.tar.gpg" > "deploy.tar"
