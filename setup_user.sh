@@ -43,13 +43,3 @@ export PIP_NO_CACHE_DIR="off"
 python -m venv venv
 source venv/bin/activate
 pip install -r nutbox/beaglebone/requirements.txt
-
-# report status
-echo "Beaglebone setup complete."
-
-# instructions
-echo "Run Jupyterlab with:"
-echo "jupyter lab --no-browser --port=5678"
-
-# scratch
-# screen

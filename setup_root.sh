@@ -16,7 +16,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # move to user home
-echo "Setting up Beaglebone ..."
 cd $HOME
 
 # clean up home directory
@@ -27,5 +26,5 @@ rm -rf $HOME/bin
 apt update
 apt install -y vim curl git python3 python3-venv linux-headers-$(uname -r)
 
-# alternatives
+# update-alternatives
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
