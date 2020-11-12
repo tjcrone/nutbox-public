@@ -9,14 +9,20 @@ set -e
 HOME="/home/debian"
 NUTBOX="$HOME/nutbox"
 
+# check for root
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root."
+   exit 1
+fi
+
 # move to user home
 echo "Setting up Beaglebone ..."
 cd $HOME
 
 # run root script
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup.sh
-sudo /bin/bash setup_root.sh
+/bin/bash setup_root.sh
 
 # run user script
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup_user.sh
-/bin/bash setup_user.sh
+sudo -u debian /bin/bash setup_user.sh
