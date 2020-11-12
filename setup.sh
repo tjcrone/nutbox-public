@@ -22,7 +22,7 @@ fi
 cd $HOME
 
 # change user password
-passwd -u debian
+passwd debian
 
 # run root script
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_root.sh
