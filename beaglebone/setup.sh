@@ -19,6 +19,9 @@ fi
 echo "Setting up Beaglebone ..."
 cd $HOME
 
+# change user password
+passwd -u debian
+
 # run root script
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/beaglebone/setup_root.sh
 /bin/bash setup_root.sh
