@@ -57,9 +57,9 @@ sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
 # venv
 export PIP_NO_CACHE_DIR="off"
-python -m venv venv
-source venv/bin/activate
-pip install -r nutbox/beaglebone/requirements.txt
+sudo -E -u debian python -m venv venv
+sudo -E -u debian source venv/bin/activate
+sudo -E -u debian pip install -r nutbox/beaglebone/requirements.txt
 
 # remove setup file
 rm "setup.sh"
