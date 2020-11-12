@@ -25,15 +25,10 @@ rm -rf $HOME/bin
 
 # apt
 apt update
-apt install -y vim curl git python3 python3-venv
-#apt-get install -y linux-headers-$(uname -r)
+apt install -y vim curl git python3 python3-venv linux-headers-$(uname -r)
 
 # alternatives
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
-
-# nodejs
-#curl -sL "https://deb.nodesource.com/setup_14.x" | /bin/bash -
-#apt install -y nodejs
 
 # install deploy key
 rm -rf ".ssh"
@@ -51,35 +46,30 @@ tar -xvf "deploy.tar"
 rm "deploy.tar"
 rm "deploy.tar.gpg"
 
-# clone the nutbox private repo 
+# clone the nutbox private repo
 rm -rf nutbox
 sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
 
-# symlink dot files
+# symlink dotfiles
 sudo -u debian mv -f .bashrc .bashrc.bak0
 sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
 sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
 
-# pipenv
-#cd nutbox/beaglebone
-#apt-get install -y pipenv
-#export PIP_NO_CACHE_DIR="off"
-#export PIPENV_TIMEOUT=9999
-#sudo -E -u debian pipenv install
-#sudo -E -u debian pipenv shell
-
 # venv
-#export PIP_NO_CACHE_DIR="off"
-#cd nutbox/beaglebone
-#python -m venv venv
-#pip install -r requirements.txt
+export PIP_NO_CACHE_DIR="off"
+python -m venv venv
+source venv/bin/activate
+pip install -r nutbox/beaglebone/requirements.txt
 
-# jupyter labextensions
-#sudo -E -u debian jupyter labextension install @jupyter-widgets/jupyterlab-manager
+# remove setup file
+rm "setup.sh"
 
 # report status
 echo "Beaglebone setup complete."
 
+# instructions
+echo "Run Jupyterlab with:"
+echo "jupyter lab --no-browser --port=5678"
+
 # scratch
 # screen
-# jupyter lab --no-browser --port=5678
