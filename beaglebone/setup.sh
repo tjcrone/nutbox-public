@@ -46,23 +46,26 @@ tar -xvf "deploy.tar"
 rm "deploy.tar"
 rm "deploy.tar.gpg"
 
+# remove setup file
+rm "setup.sh"
+
+# switch to user debian for remainder of script
+su debian
+
 # clone the nutbox private repo
 rm -rf nutbox
-sudo -u debian git clone "git@github.com:tjcrone/nutbox.git"
+git clone "git@github.com:tjcrone/nutbox.git"
 
 # symlink dotfiles
-sudo -u debian mv -f .bashrc .bashrc.bak0
-sudo -u debian ln -s -f nutbox/beaglebone/.bashrc
-sudo -u debian ln -s -f nutbox/beaglebone/.gitconfig
+mv -f .bashrc .bashrc.bak0
+ln -s -f nutbox/beaglebone/.bashrc
+ln -s -f nutbox/beaglebone/.gitconfig
 
 # venv
 export PIP_NO_CACHE_DIR="off"
-sudo -E -u debian python -m venv venv
-sudo -E -u debian source venv/bin/activate
-sudo -E -u debian pip install -r nutbox/beaglebone/requirements.txt
-
-# remove setup file
-rm "setup.sh"
+python -m venv venv
+source venv/bin/activate
+pip install -r nutbox/beaglebone/requirements.txt
 
 # report status
 echo "Beaglebone setup complete."
