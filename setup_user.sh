@@ -34,6 +34,7 @@ rm -rf nutbox
 git clone "git@github.com:tjcrone/nutbox.git"
 
 # symlink dotfiles
+touch .bashrc
 mv -f .bashrc .bashrc.bak0
 ln -s -f nutbox/beaglebone/.bashrc
 ln -s -f nutbox/beaglebone/.gitconfig
