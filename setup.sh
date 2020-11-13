@@ -37,9 +37,11 @@ wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_root.sh
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_user.sh
 sudo -u debian /bin/bash setup_user.sh
 
-# remove setup scripts
+# remove setup cruft
 rm "setup_root.sh"
 rm "setup_user.sh"
+rm ".wget-hsts"
+rm -rf ".gnupg"
 
 # report status
 echo "Beaglebone setup complete."
