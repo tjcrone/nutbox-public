@@ -39,8 +39,7 @@ rm "setup_user.sh"
 
 # report status
 echo "Beaglebone setup complete."
+echo "Starting Jupyterlab server ..."
 
-# print instructions
-echo
-echo "Run Jupyterlab with:"
-echo "jupyter lab --no-browser --port=5678"
+# start jlab server
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh)"
