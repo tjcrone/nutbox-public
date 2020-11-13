@@ -44,6 +44,3 @@ echo "Beaglebone setup complete."
 echo
 echo "Run Jupyterlab with:"
 echo "jupyter lab --no-browser --port=5678"
-
-# scratch
-# screen

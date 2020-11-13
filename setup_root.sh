@@ -24,7 +24,7 @@ rm -rf $HOME/bin
 
 # apt
 apt update
-apt install -y vim curl git python3 python3-venv linux-headers-$(uname -r)
+apt install -y vim curl git python3 python3-venv screen linux-headers-$(uname -r)
 
 # update-alternatives
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
