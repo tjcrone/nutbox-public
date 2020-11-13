@@ -38,9 +38,9 @@ wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_user.sh
 sudo -u debian /bin/bash setup_user.sh
 
 # remove setup scripts
-rm "setup.sh"
-rm "setup_root.sh"
-rm "setup_user.sh"
+#rm "setup.sh"
+#rm "setup_root.sh"
+#rm "setup_user.sh"
 
 # report status
 echo "Beaglebone setup complete."
