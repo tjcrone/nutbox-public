@@ -3,8 +3,6 @@
 # Setup script for the Nutbox Beaglebone.
 # This script works with: bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img
 
-set -e
-
 # report status
 echo "Setting up Beaglebone ..."
 
@@ -25,6 +23,8 @@ passwd debian
 cd $HOME
 rm -rf *
 rm -rf .*
+
+set -e
 
 # run root script
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_root.sh
