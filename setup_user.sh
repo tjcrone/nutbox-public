@@ -43,3 +43,6 @@ export PIP_NO_CACHE_DIR="off"
 python -m venv venv
 source venv/bin/activate
 pip install -r nutbox/beaglebone/requirements.txt
+
+# jupyterlab script
+/bin/bash jlab_screen.sh
