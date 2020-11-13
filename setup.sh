@@ -26,6 +26,7 @@ passwd debian
 # clean up home directory
 rm -rf $HOME
 mkdir $HOME
+chown debian:debian $HOME
 cd $HOME
 
 # run root script
