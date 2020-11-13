@@ -5,23 +5,11 @@
 
 set -e
 
-# locations
-HOME="/home/debian"
-NUTBOX="$HOME/nutbox"
-
 # check for root
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root."
    exit 1
 fi
-
-# move to user home
-cd $HOME
-
-# clean up home directory
-rm -f $HOME/.xsessionrc
-rm -rf $HOME/.gnupg
-rm -rf $HOME/bin
 
 # apt
 apt update

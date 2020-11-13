@@ -18,11 +18,13 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# move to user home
-cd $HOME
-
 # change user password
 passwd debian
+
+# clean up home directory
+cd $HOME
+rm -rf *
+rm -rf .*
 
 # run root script
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_root.sh
