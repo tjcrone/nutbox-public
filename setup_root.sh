@@ -19,7 +19,8 @@ fi
 cd $HOME
 
 # clean up home directory
-rm -f $HOME/.gitconfig
+rm -f $HOME/.xsessionrc
+rm -rf $HOME/.gnupg
 rm -rf $HOME/bin
 
 # apt
