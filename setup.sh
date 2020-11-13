@@ -48,4 +48,5 @@ echo "Beaglebone setup complete."
 echo "Starting Jupyterlab server ..."
 
 # start jlab server
-sudo -u debian /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh)"
+wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
+#sudo -u debian /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh)"
