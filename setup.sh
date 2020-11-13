@@ -48,7 +48,8 @@ echo "Beaglebone setup complete."
 echo "Starting Jupyterlab server ..."
 
 # start jlab server
-wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
-rm ".wget-hsts"
+sudo -u debian wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
+chmod 744 jlab_screen.sh
 sudo -u debian screen -dm /bin/bash -c "/home/debian/jlab_screen.sh; exec sh"
-rm "jlab_screen.sh"
+#rm "jlab_screen.sh"
+#rm ".wget-hsts"
