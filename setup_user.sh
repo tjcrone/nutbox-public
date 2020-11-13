@@ -3,18 +3,18 @@
 # Setup script for the Nutbox Beaglebone. User-space components
 # This script works with: bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
 # locations
 HOME="/home/debian"
 NUTBOX="$HOME/nutbox"
 
 # move to user home
-echo "Setting up Beaglebone ..."
 cd $HOME
 
 # install deploy key
-rm -rf ".ssh"
 curl -L -o "deploy.tar.gpg" "https://github.com/tjcrone/nutbox-public/blob/main/deploy.tar.gpg?raw=true"
 
 decrypt_file () {
@@ -30,7 +30,6 @@ rm "deploy.tar"
 rm "deploy.tar.gpg"
 
 # clone the nutbox private repo
-rm -rf nutbox
 git clone "git@github.com:tjcrone/nutbox.git"
 
 # symlink dotfiles

@@ -3,7 +3,9 @@
 # Setup script for the Nutbox Beaglebone.
 # This script works with: bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img
 
-set -e
+set -o errexit
+set -o nounset
+set -o pipefail
 
 # check for root
 if [[ $EUID -ne 0 ]]; then
