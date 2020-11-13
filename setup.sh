@@ -50,5 +50,5 @@ echo "Starting Jupyterlab server ..."
 # start jlab server
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
 rm ".wget-hsts"
-screen -dm /bin/bash -c "/home/debian/jlab_screen.sh; exec sh"
+sudo -u debian screen -dm /bin/bash -c "/home/debian/jlab_screen.sh; exec sh"
 rm "jlab_screen.sh"
