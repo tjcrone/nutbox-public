@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Setup script for the Nutbox Beaglebone. User-space components
-# This script works with: bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img
-
+# error checking
 set -o errexit
 set -o nounset
 set -o pipefail
