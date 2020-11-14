@@ -1,21 +1,37 @@
 #!/bin/bash
 
-# Setup script for the Nutbox Beaglebone.
-# This script works with: bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img
-
+# error checking
 set -o errexit
 set -o nounset
 set -o pipefail
 
 # check for root
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root."
-   exit 1
+  echo "This script must be run as root."
+  exit 1
 fi
 
 # apt
 apt update
-apt install -y vim curl git python3 python3-venv screen linux-headers-$(uname -r)
+apt install -y \
+  build-essential \
+  curl \
+  git \
+  libatlas-base-dev \
+  libjpeg62-turbo \
+  libopenjp2-7 \
+  libtiff5 \
+  libxcb1 \
+  linux-headers-$(uname -r) \
+  locales \
+  python3 \
+  python3-venv \
+  screen \
+  vim
+
+# locales
+echo en_US.UTF UTF-8 >> /etc/locale.gen
+/usr/sbin/locale-gen
 
 # update-alternatives
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
