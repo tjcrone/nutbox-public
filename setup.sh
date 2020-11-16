@@ -45,11 +45,11 @@ rm -rf ".gnupg"
 
 # report status
 echo "Beaglebone setup complete."
-echo "Starting Jupyterlab server ..."
 
 # start Jupyterlab server
-sudo -u debian wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
-chmod 744 jlab_screen.sh
-sudo -u debian screen -dm /bin/bash -c "/home/debian/jlab_screen.sh; exec sh"
-find $HOME -type f -name "jlab_screen.sh" | xargs rm
-find $HOME -type f -name ".wget-hsts" | xargs rm
+#echo "Starting Jupyterlab server ..."
+#sudo -u debian wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
+#chmod 744 jlab_screen.sh
+#sudo -u debian screen -dm /bin/bash -c "/home/debian/jlab_screen.sh; exec sh"
+#find $HOME -type f -name "jlab_screen.sh" | xargs rm
+#find $HOME -type f -name ".wget-hsts" | xargs rm
