@@ -47,12 +47,5 @@ rm ".wget-hsts"
 rm -rf ".gnupg"
 
 # report status
+echo
 echo "Beaglebone setup complete."
-
-# start Jupyterlab server
-#echo "Starting Jupyterlab server ..."
-#sudo -u debian wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/jlab_screen.sh
-#chmod 744 jlab_screen.sh
-#sudo -u debian screen -dm /bin/bash -c "/home/debian/jlab_screen.sh; exec sh"
-#find $HOME -type f -name "jlab_screen.sh" | xargs rm
-#find $HOME -type f -name ".wget-hsts" | xargs rm
