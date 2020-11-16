@@ -46,7 +46,7 @@ sudo dd bs=1m if=bone-eMMC-flasher-debian-10.5-console-armhf-2020-08-25-1gb.img 
 1) Unplug board completely.
 2) Insert the microSD card.
 3) While holding the button near the microSD card, plug in the board.
-4) Keep the buttons pressed until the lights flash.
+4) Keep the button pressed until the lights flash.
 5) When the process is complete the board will shut itself down.
 
 ### Log in to Beaglebone over SSH
