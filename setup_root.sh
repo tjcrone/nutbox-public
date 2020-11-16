@@ -38,4 +38,7 @@ echo en_US.UTF UTF-8 >> /etc/locale.gen
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 
 # connect to wifi
-nmcli -a d wifi connect TimNet1
+echo
+echo "Setting up wifi ..."
+read -p "Name of wifi network: " wifi_name
+nmcli -a d wifi connect $wifi_name
