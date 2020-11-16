@@ -24,6 +24,7 @@ apt install -y \
   libxcb1 \
   linux-headers-$(uname -r) \
   locales \
+  network-manager \
   python3 \
   python3-venv \
   screen \
@@ -35,3 +36,6 @@ echo en_US.UTF UTF-8 >> /etc/locale.gen
 
 # update-alternatives
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+
+# connect to wifi
+nmcli -a d wifi connect TimNet1
