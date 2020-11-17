@@ -40,4 +40,8 @@ ln -s -f nutbox/beaglebone/.gitconfig
 export PIP_NO_CACHE_DIR="off"
 python -m venv venv
 source venv/bin/activate
-pip install -r nutbox/beaglebone/requirements.txt
+#pip install -r nutbox/beaglebone/requirements.txt
+pip install --pre jupyterlab
+pip install ipywidgets
+pip install --pre jupyterlab_widgets
+pip install Adafruit-BBIO numpy pandas xarray
