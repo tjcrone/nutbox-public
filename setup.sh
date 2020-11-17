@@ -37,8 +37,10 @@ wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_root.sh
 wget https://raw.githubusercontent.com/tjcrone/nutbox-public/main/setup_user.sh
 sudo -u debian /bin/bash setup_user.sh
 
-# Jlab boot script
+# copy Jlab script and configuration
 cp "/home/debian/nutbox/beaglebone/rc.local" /etc/
+mkdir "${HOME}/.jupyter"
+cp "/home/debian/nutbox/beaglebone/jupyter_lab_config.py" "${HOME}/.jupyter"
 
 # remove setup cruft
 rm "setup_root.sh"
