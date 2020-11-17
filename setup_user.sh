@@ -50,6 +50,7 @@ mkdir "${HOME}/.jupyter"
 cp "/home/debian/nutbox/beaglebone/jupyter_lab_config.py" "${HOME}/.jupyter"
 
 # favicon fixes
-ICONDIR="${HOME}/venv/lib/python3.7/site-packages/jupyter_server/static/favicons"
-mkdir -p $ICONDIR
-cp "${HOME}/venv/lib/python3.7/site-packages/notebook/static/base/images/favicon*" $ICONDIR
+SOURCE_DIR="${HOME}/venv/lib/python3.7/site-packages/notebook/static/base/images/"
+ICON_DIR="${HOME}/venv/lib/python3.7/site-packages/jupyter_server/static/favicons"
+mkdir -p $ICON_DIR
+find "${SOURCE_DIR}" -type f -name "*.ico" | xargs -I {} cp {} $ICON_DIR
