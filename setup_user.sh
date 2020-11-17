@@ -48,3 +48,8 @@ pip install Adafruit-BBIO numpy pandas xarray
 # copy Jlab configuration
 mkdir "${HOME}/.jupyter"
 cp "/home/debian/nutbox/beaglebone/jupyter_lab_config.py" "${HOME}/.jupyter"
+
+# favicon fixes
+ICONDIR="${HOME}/venv/lib/python3.7/site-packages/jupyter_server/static/favicons"
+mkdir -p $ICONDIR
+cp "${HOME}/venv/lib/python3.7/site-packages/notebook/static/base/images/favicon*" $ICONDIR
