@@ -43,7 +43,7 @@ source venv/bin/activate
 pip install --pre jupyterlab
 pip install ipywidgets
 pip install --pre jupyterlab_widgets
-pip install Adafruit-BBIO numpy pandas xarray
+pip install Adafruit-BBIO matplotlib numpy pandas xarray
 
 # copy Jlab configuration
 mkdir "${HOME}/.jupyter"
